@@ -1,16 +1,30 @@
-import React from "react"
+// @ts-ignore
+import React, { FC } from "react"
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome"
 import { faGithub } from "@fortawesome/free-brands-svg-icons"
 import { faMediumM } from "@fortawesome/free-brands-svg-icons"
 import { faLinkedinIn } from "@fortawesome/free-brands-svg-icons"
 import Header from "./header"
-
-const Layout = ({ location, title, children }) => {
-  const rootPath = `${__PATH_PREFIX__}/`
-  const isRootPath = location.pathname === rootPath
+interface ILayout {
+  title: string;
+  location: {
+    hash: string;
+    host: string;
+    hostname: string;
+    href: string;
+    key: string;
+    origin: string;
+    pathname: string;
+    port: string;
+    protocol: string;
+    search: string
+    state: any
+  }
+}
+const Layout: FC<ILayout> = ({ location, title, children }) => {
   const links = [{name: 'contact', no: '04'}, {name: 'work', no: '03'}, {name: 'about', no: '02'}, {name: 'home', no: '01'}];
   return (
-    <div className="global-wrapper" data-is-root-path={isRootPath}>
+    <div className="global-wrapper">
       <Header links={links}/>
       <div className="main-wraper">
         <main>

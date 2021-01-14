@@ -20,10 +20,10 @@ const Header: FC<IHeader> = ({links}) => {
       </div>
       <nav className="ec_header__item">
         <ul>
-          {links.map((item) => {
+          {links.map((item, index) => {
             if(item.name === 'home') {
               return (
-                <li>
+                <li key={index}>
                   <Link className="ec_header__item__nav-link" to="/">
                     <p className="ec_header__item__nav-p">{item.no}.</p>
                     {item.name}
@@ -32,7 +32,7 @@ const Header: FC<IHeader> = ({links}) => {
               )
             }
             return (
-              <li>
+              <li key={index}>
                 <Link className="ec_header__item__nav-link" to={"/"+item.name}>
                   <p className="ec_header__item__nav-p">{item.no}.</p>
                   {item.name}
