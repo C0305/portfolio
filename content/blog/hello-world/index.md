@@ -39,53 +39,53 @@ This is a paragraph.
 
     This is a paragraph.
 
-# Header 1
+# Index 1
 
-## Header 2
+## Index 2
 
-    Header 1
+    Index 1
     ========
 
-    Header 2
+    Index 2
     --------
 
-# Header 1
+# Index 1
 
-## Header 2
+## Index 2
 
-### Header 3
+### Index 3
 
-#### Header 4
+#### Index 4
 
-##### Header 5
+##### Index 5
 
-###### Header 6
+###### Index 6
 
-    # Header 1
-    ## Header 2
-    ### Header 3
-    #### Header 4
-    ##### Header 5
-    ###### Header 6
+    # Index 1
+    ## Index 2
+    ### Index 3
+    #### Index 4
+    ##### Index 5
+    ###### Index 6
 
-# Header 1
+# Index 1
 
-## Header 2
+## Index 2
 
-### Header 3
+### Index 3
 
-#### Header 4
+#### Index 4
 
-##### Header 5
+##### Index 5
 
-###### Header 6
+###### Index 6
 
-    # Header 1 #
-    ## Header 2 ##
-    ### Header 3 ###
-    #### Header 4 ####
-    ##### Header 5 #####
-    ###### Header 6 ######
+    # Index 1 #
+    ## Index 2 ##
+    ### Index 3 ###
+    #### Index 4 ####
+    ##### Index 5 #####
+    ###### Index 6 ######
 
 > Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aliquam hendrerit mi posuere lectus. Vestibulum enim wisi, viverra nec, fringilla in, laoreet vitae, risus.
 
