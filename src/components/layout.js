@@ -36,7 +36,7 @@ const Layout = ({ location, title, children }) => {
             </div>
           </div>
           <footer>
-            <p>Crafted with <span role="img" aria-label="Love">&#10084;&#65039;</span> from mexico</p>
+            <p>Crafted with <span role="img" aria-label="Love">&#10084;&#65039;</span> from México</p>
           </footer>
         </main>
       </div>
