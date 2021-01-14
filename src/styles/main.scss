@@ -1,0 +1,53 @@
+.global-wrapper {
+  min-width: 100vw;
+  min-height: 100vh;
+}
+
+.main-wraper {
+  background-color: $background-color;
+}
+
+main {
+  height: calc(100vh - 4rem);
+  .lateral {
+    display: flex;
+    transform: rotate(-90deg);
+    width: 400px;
+    bottom: 14rem;
+    justify-self: center;
+    position: absolute;
+    color: $secondary-text-color;
+
+    .icons {
+      display: flex;
+      justify-content: space-between;
+      div {
+        padding-left: 10px;
+        svg {
+          transform: rotate(90deg);
+        }
+      }
+    }
+
+    &--left {
+      left: -11rem;
+    }
+    &--right {
+      right: -11rem;
+    }
+
+    hr {
+      color: $main-text-color;
+    }
+
+
+    .side-line {
+      width: 14rem;
+      margin-bottom: auto;
+      margin-top: auto;
+      background-color: $main-text-color;
+      color: $main-text-color;
+      border-color: $main-text-color;
+    }
+  }
+}

@@ -1,0 +1,56 @@
+.ec_header {
+  background: #040D21;
+  height: $header-height;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+
+  &__item {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    right: 0;
+    &__nav-logo {
+      height: 100%;
+      margin: auto auto auto 2rem;
+      padding: 1%;
+      &__img {
+        height: 80%;
+        color:  white;
+        transition: .5s;
+        &:hover {
+          height: 90%;
+        }
+      }
+    }
+    &__nav-link {
+      display: block;
+      padding: .5rem .5rem;
+      font-size: .85rem;
+      text-decoration: none;
+      transition: .4s;
+      text-transform:capitalize;
+      @include text-color('secondary', false);
+      &:hover {
+        @include text-color('hover',false);
+      }
+    }
+
+    &__nav-link--selected {
+      @include text-color('hover',false);
+    }
+
+    &__nav-p {
+      display: inline-block;
+      @include text-color('primary',false);
+    }
+
+    ul {
+      margin: auto 1rem auto auto;
+      li {
+        float: right;
+        margin: 0 .8rem;
+      }
+    }
+  }
+}

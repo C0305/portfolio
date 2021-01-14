@@ -1,0 +1,23 @@
+@mixin text-color($type, $important) {
+  @if($type == 'primary') {
+    @if($important) {
+      color: $main-text-color !important;
+    } @else {
+      color: $main-text-color;
+    }
+  }
+  @if($type == 'secondary') {
+    @if($important) {
+      color: $secondary-text-color !important;
+    } @else {
+      color: $secondary-text-color;
+    }
+  }
+  @if($type == 'hover') {
+    @if($important) {
+      color: $hover-text-color !important;
+    } @else {
+      color: $hover-text-color;
+    }
+  }
+}
