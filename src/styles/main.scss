@@ -25,12 +25,22 @@ main {
         padding-left: 10px;
         svg {
           transform: rotate(90deg);
+          transition: .2s;
+          &:hover {
+            @include text-color('hover',false);
+            transition: .2s;
+          }
         }
       }
     }
 
     &--left {
       left: -11rem;
+      transition: .2s;
+      &:hover {
+        @include text-color('hover',false);
+        transition: .2s;
+      }
     }
     &--right {
       right: -11rem;
