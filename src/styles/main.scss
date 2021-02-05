@@ -5,10 +5,15 @@
 
 .main-wraper {
   background-color: $background-color;
+  position: relative;
 }
 
 main {
-  height: calc(100vh - 4rem);
+  a {
+    color: $secondary-text-color;
+    text-decoration:none
+  }
+  height: calc(100vh - 5rem);
   .lateral {
     display: flex;
     transform: rotate(-90deg);
@@ -36,10 +41,13 @@ main {
 
     &--left {
       left: -11rem;
-      transition: .2s;
-      &:hover {
-        @include text-color('hover',false);
+      a {
         transition: .2s;
+        color: $secondary-text-color;
+        &:hover {
+          @include text-color('hover',false);
+          transition: .2s;
+        }
       }
     }
     &--right {
@@ -58,6 +66,73 @@ main {
       background-color: $main-text-color;
       color: $main-text-color;
       border-color: $main-text-color;
+
+      &--hide {
+        display: none;
+      }
+    }
+  }
+  .top {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    display: flex;
+    margin-top: 1rem;
+    hr {
+      width: 100%;
+      margin-top: auto;
+      margin-bottom: auto;
+    }
+    p {
+      padding:  1rem;
+      text-align: center;
+      font-size: 1.5rem;
+    }
+  }
+  .middle {
+    padding-top: 6rem;
+    ul {
+      margin: auto;
+      padding-right: 1rem;
+      display: flex;
+      flex-flow: column-reverse;
+      list-style: none;
+      li {
+        text-align: left;
+        a {
+          font-size: 3.5rem;
+        }
+        p {
+          font-size: 3.5rem;
+          margin: 0;
+        }
+        margin: 0 .8rem;
+      }
+    }
+  }
+  .bottom {
+    position: absolute;
+    bottom: 2rem;
+    width: 100%;
+    display: flex;
+    flex-flow: row;
+    a {
+      margin: 0 1rem;
+    }
+    hr {
+      width: 100%;
+      margin-top: auto;
+      margin-bottom: auto;
+    }
+    .icons {
+      margin-top: auto;
+      margin-bottom: auto;
+      display: flex;
+    }
+    p {
+      padding:  1rem;
+      text-align: center;
+      font-size: 2rem;
     }
   }
 }

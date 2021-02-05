@@ -1,25 +1,23 @@
 footer {
   position: absolute;
-  height: 2.5rem;
+  height: 3rem;
   bottom: 0;
   width: 100%;
   display: flex;
   justify-content: center;
+  align-items: center;
   background-color: $secondary-text-color;
+  border-top-left-radius: 100% 70px;
+  border-top-right-radius: 100% 70px;
+
   p {
     z-index: 1;
     line-height: .5;
     position: absolute;
     margin: 0;
   }
-  &:after {
-    content: "";
-    position: absolute;
-    height: 70px;
-    left: -10%;
-    right: -10%;
-    border-radius: 50%;
-    bottom: 0;
-    background: #fff;
-  }
+}
+
+.home-page {
+  height: 5rem;
 }
