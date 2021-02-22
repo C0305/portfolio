@@ -74,11 +74,14 @@
       &:hover {
         @include text-color('hover',false);
       }
+
+      &__nav-link--selected {
+        color: $hover-text-color !important;
+      }
+
     }
 
-    &__nav-link--selected {
-      @include text-color('hover',false);
-    }
+
 
     &__nav-p {
       display: inline-block;

@@ -15,8 +15,28 @@ export interface ILayout {
   }
 }
 
-export interface ILinks {
+export interface ISocialLinks {
+  links: ISocial;
+}
+
+export interface ISocial {
   github?: string;
   linkedin?: string;
   medium?: string;
+  email?: string;
+}
+
+export interface IHeader {
+  path: string;
+  links: IPageLink[]
+}
+
+export interface IPageLinks {
+  links: IPageLink[];
+  path: string;
+}
+
+export interface IPageLink {
+  name: string;
+  no: string;
 }

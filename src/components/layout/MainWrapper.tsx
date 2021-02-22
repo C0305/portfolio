@@ -1,17 +1,17 @@
+// @ts-ignore
 import React, {FC}from "react"
 import { faGithub } from "@fortawesome/free-brands-svg-icons"
 import { faMediumM } from "@fortawesome/free-brands-svg-icons"
 import { faLinkedinIn } from "@fortawesome/free-brands-svg-icons"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import {ILinks} from "./interfaces"
+import {ISocialLinks, ISocial} from "./interfaces"
 import useMediaQuery from "../hooks/useMediaQuery"
 import c from "../../constants"
 
 // @ts-ignore
-const SocialLinks: FC<ILinks> = ( {links} ) => {
+const SocialLinks: FC<ISocialLinks> = ( {links} ) => {
   const isPageWide = useMediaQuery(c.MOBILE_MIN_WIDTH)
-  console.log(links)
-  return Object.keys(links).map((key: string) => {
+  return Object.keys(links).map((key: string, index: number) => {
     let icon;
     let link;
     switch (key) {
@@ -30,7 +30,7 @@ const SocialLinks: FC<ILinks> = ( {links} ) => {
     }
     if(key !== "email") {
       return (
-        <div>
+        <div key={key+"-"+index}>
           <a href={link}><FontAwesomeIcon className="icon" size={isPageWide ? 'lg' : '2x'} icon={icon}/></a>
         </div>
       )
@@ -38,7 +38,13 @@ const SocialLinks: FC<ILinks> = ( {links} ) => {
   })
 }
 
-const MainWrapper = ({social, children, hideSocialLinks, topDown}) => {
+interface IMainWrapper {
+  social: ISocial;
+  hideSocialLinks?: boolean;
+  topDown?: boolean;
+}
+
+const MainWrapper: FC<IMainWrapper> = ({social, children, hideSocialLinks, topDown}) => {
   const mailToClass = topDown ? 'top' : "lateral lateral--left"
   const socialToClass = topDown ? 'bottom' : "lateral lateral--right"
   const firstHr = topDown ? '' : "side-line"
@@ -59,7 +65,7 @@ const MainWrapper = ({social, children, hideSocialLinks, topDown}) => {
             <hr className={secondHr} color="#B3E3FF"/>
           </div>
         )}
-        <div className={topDown ? 'middle': ''}>
+        <div className={topDown ? 'middle middle-height': 'middle-height'}>
           {children}
         </div>
         {hideSocialLinks ? (<></>) : (

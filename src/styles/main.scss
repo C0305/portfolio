@@ -89,6 +89,10 @@ main {
     }
   }
   .middle {
+    &-height {
+      display: flex;
+      height: calc(100% - 5rem);
+    }
     padding-top: 6rem;
     ul {
       margin: auto;
