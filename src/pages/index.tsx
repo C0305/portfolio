@@ -19,6 +19,12 @@ const EarthContianer = styled.div`
   padding-left: 10%;
   padding-right: 10%;
   color: white;
+  @media (max-width: 768px) {
+    width: 100%;
+    padding-left: 0;
+    padding-right: 0;
+    margin-top: 2rem;
+  }
 `;
 
 const WhoIAmTitle= styled.h1`
@@ -75,6 +81,8 @@ const HireMeButonContainer = styled.div`
   flex-direction: column;
 `;
 
+
+
 const HomePage = ({ data, location }) => {
   const experienceMockData = [
     {
@@ -116,6 +124,7 @@ const HomePage = ({ data, location }) => {
       <EarthContianer>
         <Earth/>
       </EarthContianer>
+
       <TextContainer>
         <WhoIAmHello>Hi there,</WhoIAmHello>
         <WhoIAmTitle>I'm Ernesto Cobos</WhoIAmTitle>

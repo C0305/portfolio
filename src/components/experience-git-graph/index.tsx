@@ -3,6 +3,7 @@ import React, {FC} from 'react'
 import { IExperienceGitGraph, EStoryType } from './interfaces';
 import styled from "styled-components";
 import {createUseStyles} from 'react-jss'
+import { Gitgraph } from "@gitgraph/react"
 
 const useStyles = createUseStyles({
   vertical: {
@@ -120,27 +121,30 @@ const ExperienceGitGraph: FC<IExperienceGitGraph> = ({experienceHistory, openOrC
     return aStartDate > bStartDate;
   })
   const classes = useStyles()
+
+  const img = img => {
+    return <img src={img}/>
+  }
   return (
-    <VerticalContainer>
-      <ContainerScroll>
-        {sortedExperience.map((story,index) => {
-          return (
-          <Container key={`${story.company}-${index}`}>
-            <Container>
-              <TreeLine isGrey={sortedExperience.length - 1 === index || index === 0}/>
-            </Container>
-            <Container>
-              <Story className={{
-              marginTop: 'auto',
-              marginBottom: 'auto'
-            }} theme={story.type}/>
-              <TreeLine isGrey={sortedExperience.length - 1 === index || index === 0}/>
-            </Container>
-          </Container>
-        )
-      })}
-      </ContainerScroll>
-    </VerticalContainer>
+    <Gitgraph>
+      {(gitgraph) => {
+        const master = gitgraph.branch("employee");
+        sortedExperience.forEach(item => {
+          if(item.type === 'contractor'){
+            const contractor = gitgraph.branch(item.company);
+            contractor.commit({subject: item.company});
+            if(item.endDate.length > 0){
+              master.merge(contractor);
+            }
+          }else {
+            master.commit({
+              subject: item.company,
+              onClick: () => {alert('hola')},
+            })
+          }
+        })
+      }}
+    </Gitgraph>
   )
 }
 

@@ -7,6 +7,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import {ISocialLinks, ISocial} from "./interfaces"
 import useMediaQuery from "../hooks/useMediaQuery"
 import c from "../../constants"
+import styled from "styled-components"
 
 // @ts-ignore
 const SocialLinks: FC<ISocialLinks> = ( {links} ) => {
@@ -44,6 +45,40 @@ interface IMainWrapper {
   topDown?: boolean;
 }
 
+const MainWrapperDiv = styled.div`
+  background-color: #040D21;
+  position: relative;
+`;
+
+const MiddleWrapperDiv = styled.div`
+  display: flex;
+  height: calc(100% - 10rem);
+  @media (max-width: 768px) {
+    flex-direction: column;
+    height: 100%;
+  }
+  ul {
+    margin: auto;
+    padding-right: 1rem;
+    display: flex;
+    flex-flow: column-reverse;
+    list-style: none;
+    li {
+      text-align: left;
+      a {
+        font-size: 3.5rem;
+      }
+      p {
+        font-size: 3.5rem;
+        margin: 0;
+      }
+      margin: 0 .8rem;
+    }
+  }
+`;
+
+
+
 const MainWrapper: FC<IMainWrapper> = ({social, children, hideSocialLinks, topDown}) => {
   const mailToClass = topDown ? 'top' : "lateral lateral--left"
   const socialToClass = topDown ? 'bottom' : "lateral lateral--right"
@@ -52,7 +87,7 @@ const MainWrapper: FC<IMainWrapper> = ({social, children, hideSocialLinks, topDo
 
   // @ts-ignore
   return (
-    <div className="main-wraper">
+    <MainWrapperDiv className="main-wraper">
       <main>
         {hideSocialLinks ? (<></>) : (
           <div className={mailToClass}>
@@ -65,9 +100,9 @@ const MainWrapper: FC<IMainWrapper> = ({social, children, hideSocialLinks, topDo
             <hr className={secondHr} color="#B3E3FF"/>
           </div>
         )}
-        <div className={topDown ? 'middle middle-height': 'middle-height'}>
+        <MiddleWrapperDiv>
           {children}
-        </div>
+        </MiddleWrapperDiv>
         {hideSocialLinks ? (<></>) : (
           <div className={socialToClass}>
             <hr className={firstHr} color="#B3E3FF"/>
@@ -78,7 +113,7 @@ const MainWrapper: FC<IMainWrapper> = ({social, children, hideSocialLinks, topDo
           </div>
         )}
       </main>
-    </div>
+    </MainWrapperDiv>
   )
 }
 

@@ -4,6 +4,11 @@ import styled from "styled-components"
 const EarthImage = styled.img`
   max-width: 600px;
   height: auto;
+  @media (max-width: 768px) {
+    height: auto;
+    width: 80%;
+    margin: 0 auto;
+  }
 `;
 
 const Earth = () => {

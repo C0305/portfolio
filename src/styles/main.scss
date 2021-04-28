@@ -92,8 +92,12 @@ main {
     &-height {
       display: flex;
       height: calc(100% - 5rem);
+      @media (max-width: 768px) {
+        flex-direction: column;
+        height: 100%;
+      }
     }
-    padding-top: 6rem;
+
     ul {
       margin: auto;
       padding-right: 1rem;
